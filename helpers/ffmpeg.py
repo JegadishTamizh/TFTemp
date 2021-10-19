@@ -14,11 +14,11 @@ async def extract_audio(client, message, data):
 
     dwld_loc = data['location']
 
-    out_loc = data['location']
+    out_loc = data['location'] + "mka"
 
     if data['name'] == "opus":
 
-        out, err, rcode, pid = await execute(f"ffmpeg -i '{dwld_loc}' -map 0:{data['map']} -c copy '{out_loc}' + '.opus' -y")
+        out, err, rcode, pid = await execute(f"ffmpeg -i '{dwld_loc}' -map 0:{data['map']} -c copy '{out_loc}' -y")
 
         if rcode != 0:
 
@@ -46,7 +46,7 @@ async def extract_audio(client, message, data):
 
     if data['name'] == "ac3":
 
-        out, err, rcode, pid = await execute(f"ffmpeg -i '{dwld_loc}' -map 0:{data['map']} -c copy '{out_loc}.ac3' -y")
+        out, err, rcode, pid = await execute(f"ffmpeg -i '{dwld_loc}' -map 0:{data['map']} -c copy '{out_loc}.mka' -y")
 
         if rcode != 0:
 
@@ -74,7 +74,7 @@ async def extract_audio(client, message, data):
 
     else:
 
-        out, err, rcode, pid = await execute(f"ffmpeg -i '{dwld_loc}' -map 0:{data['map']} '{out_loc}.mp3' -y")
+        out, err, rcode, pid = await execute(f"ffmpeg -i '{dwld_loc}' -map 0:{data['map']} -c copy '{out_loc}.mka' -y")
 
         if rcode != 0:
 
