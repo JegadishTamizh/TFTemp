@@ -18,7 +18,7 @@ async def extract_audio(client, message, data):
 
     if data['name'] == "opus":
 
-        out, err, rcode, pid = await execute(f"ffmpeg -i '{dwld_loc}' -map 0:{data['map']} -c copy '{out_loc}.opus' -y")
+        out, err, rcode, pid = await execute(f"ffmpeg -i '{dwld_loc}' -map 0:{data['map']} -c copy '{out_loc}' + '.opus' -y")
 
         if rcode != 0:
 
