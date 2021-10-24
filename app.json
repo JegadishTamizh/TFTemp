@@ -1,16 +1,16 @@
 {
-    "name": "Streams Extractor Bot",
+    "name": "TamilFusion Audio Extractor Bot",
     "description": "A bot to extract audio and subtitles from video files..",
-    "logo": "https://telegra.ph/file/71aaa621508cd696ab538.jpg",
+    "logo": "https://telegra.ph/file/b92e4bab6d643ae66594e.jpg",
     "keywords": [
         "Streams",
         "Extractor",
         "Telegram Bot",
-        "TroJanzHEX"
+        "Tamil Fusion"
     ],
-    "website": "https://TroJanzHEX.me",
-    "repository": "https://github.com/TroJanzHEX/Streams-Extractor",
-    "success_url": "https://telegram.dog/TroJanzHEX",
+    "website": "https://t.me/TamilFusion1",
+    "repository": "https://t.me/TamilFusion1",
+    "success_url": "https://telegram.dog/TamilFusion1",
     "env": {
         "BOT_TOKEN": {
             "description": "You Telegram Bot Token from @BotFather",
