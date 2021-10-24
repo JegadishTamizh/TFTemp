@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# @trojanzhex
+# @TamilFusion1
 
 
 from pyrogram import Client
