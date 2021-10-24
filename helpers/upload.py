@@ -42,13 +42,13 @@ async def upload_audio(client, message, file_loc):
             chat_id=message.chat.id,
             audio=file_loc,
             thumb=thumb,
-            caption="**@TroJanzHEX**",
+            caption="**@TamilFusion1**",
             title=title,
             performer=artist,
             duration=duration,
             progress=progress_func,
             progress_args=(
-                "**Uploading extracted stream...**",
+                "**Uploading Audio File...**",
                 msg,
                 c_time
             )
