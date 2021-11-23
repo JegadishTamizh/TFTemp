@@ -36,9 +36,9 @@ async def extract_subtitle(client, message, data):
     await message.edit_text("Extracting Stream from file")
 
     dwld_loc = data['location']
-    out_loc = data['location'] + ".srt"   
+    out_loc = data['location'] + ".mkv"   
 
-    out, err, rcode, pid = await execute(f"ffmpeg -i '{dwld_loc}' -map 0:{data['map']} '{out_loc}' -y")
+    out, err, rcode, pid = await execute(f"ffmpeg -i '{dwld_loc}' -c copy -an -metadata title='Tamil Fusion' -metadata:s:v:0 title='Tamil Fusion'  -metadata:s:s:0 title='Tamil Fusion' '{out_loc}' -y")
     if rcode != 0:
         await message.edit_text("**Error Occured. See Logs for more info.**")
         print(err)
