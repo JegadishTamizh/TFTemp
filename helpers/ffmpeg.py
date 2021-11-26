@@ -13,7 +13,7 @@ async def extract_audio(client, message, data):
     out_loc = data['location'] + ".mkv"
 
     if data['name'] == "mkv":
-        out, err, rcode, pid = await execute(f"ffmpeg -i '{dwld_loc}' -map 0 -map -0:{data['map']} -c copy -metadata title='Tamil Fusion' -metadata:s:v title='Tamil Fusion' -metadata:s:a title='Tamil Fusion' -metadata:s:s title='Tamil Fusion' '{out_loc}' -y")
+        out, err, rcode, pid = await execute(f"ffmpeg -i '{dwld_loc}' -c:v libx265 -vtag hvc1 -c:a copy -metadata title='Tamil Fusion' -metadata:s:v title='Tamil Fusion' -metadata:s:a title='Tamil Fusion' -metadata:s:s title='Tamil Fusion' '{out_loc}' -y")
         if rcode != 0:
             await message.edit_text("**Error Occured. See Logs for more info.**")
             print(err)
